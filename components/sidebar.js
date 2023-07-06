@@ -76,33 +76,12 @@ const SearchBar = styled((props) => (
   },
 }));
 
-export default function Sidebar({ nama, kota, click }) {
+export default function Sidebar() {
   const router = useRouter();
 
   return (
     <Box>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: `calc(100% - ${drawerWidth}px)`,
-          ml: `${drawerWidth}px`,
-          backgroundColor: "#FFFFFF",
-          boxShadow: "none",
-          borderBottom: "1px solid #EEEEEE",
-        }}
-      >
-        <Toolbar>
-          <Autocomplete
-            freeSolo
-            options={deviceList.map((val) => val.tittle)}
-            renderInput={(params) => (
-              <SearchBar label="Cari Device" variant="filled" {...params} />
-            )}
-            sx={{ "& .MuiAutocomplete-option": { color: "black" } }}
-          />
-        </Toolbar>
-      </AppBar>
 
       <Drawer
         sx={{
@@ -112,7 +91,7 @@ export default function Sidebar({ nama, kota, click }) {
             width: drawerWidth,
             boxSizing: "border-box",
             color: "#040C1F",
-            background: "#040C1F",
+            background: "#0025a9",
           },
         }}
         variant="permanent"
@@ -137,45 +116,6 @@ export default function Sidebar({ nama, kota, click }) {
           </Box>
         </Toolbar>
         <Divider />
-        <Toolbar
-          sx={{ display: "flex", justifyContent: "center", paddingTop: "50px" }}
-        >
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              height={"65px"}
-              width={"65px"}
-              src="/foto.png"
-              style={{
-                borderRadius: "65px",
-                border: "solid 1px #FFFFFF",
-                padding: "2px",
-              }}
-            />
-
-            <Typography
-              variant="h5"
-              noWrap
-              component="div"
-              sx={{ marginTop: "8px" }}
-            >
-              {nama}
-            </Typography>
-            <Typography
-              noWrap
-              component="span"
-              sx={{ color: "rgba(255, 255, 255, 0.5)" }}
-            >
-              {kota}
-            </Typography>
-          </Box>
-        </Toolbar>
-        <Divider />
 
         <List sx={{ paddingLeft: "50px", paddingTop: "50px" }}>
           {data.map((item, i) => (
@@ -185,7 +125,6 @@ export default function Sidebar({ nama, kota, click }) {
                   sx={{ color: "#81858F" }}
                   onClick={() => click(`halaman ${item.title}`)}
                 >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText>
                     <Typography sx={{ fontFamily }}>{item.title}</Typography>
                   </ListItemText>
@@ -209,21 +148,6 @@ export default function Sidebar({ nama, kota, click }) {
               sx={{ color: "#81858F" }}
               onClick={() => click("tombol keluar")}
             >
-              <ListItemIcon>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  fillOpacity="0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.75 1.5H14.25C14.4489 1.5 14.6397 1.57902 14.7803 1.71967C14.921 1.86032 15 2.05109 15 2.25V15.75C15 15.9489 14.921 16.1397 14.7803 16.2803C14.6397 16.421 14.4489 16.5 14.25 16.5H3.75C3.55109 16.5 3.36032 16.421 3.21967 16.2803C3.07902 16.1397 3 15.9489 3 15.75V2.25C3 2.05109 3.07902 1.86032 3.21967 1.71967C3.36032 1.57902 3.55109 1.5 3.75 1.5ZM6.75 8.25V6L3 9L6.75 12V9.75H11.25V8.25H6.75Z"
-                    fill="white"
-                  />
-                </svg>
-              </ListItemIcon>
               <ListItemText>
                 <Typography sx={{ fontFamily }}>Keluar</Typography>
               </ListItemText>

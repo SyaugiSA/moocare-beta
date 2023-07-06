@@ -151,10 +151,6 @@ export default function Domisili() {
         <title>MooCare-Register</title>
       </Head>
 
-      <Box sx={{ display: { md: "block", xs: "none" } }}>
-        <Image src="/register.png" alt="Sapi" width={650} height={975} />
-      </Box>
-
       {message != "" ? (
         <Snackbar
           open={snack}
@@ -203,55 +199,7 @@ export default function Domisili() {
             </Typography>
           </Box>
 
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            sx={{ float: "right", width: { md: "50%", xs: "100%" }, mb: 10 }}
-          >
-            <Box onClick={() => router.back()} sx={{ cursor: "pointer" }}>
-              <ArrowBackIos fontSize="10" sx={{ fill: "black" }} />
-              <Typography
-                variant="body1"
-                component="span"
-                sx={{ fontFamily, color: "black" }}
-              >
-                Kembali
-              </Typography>
-            </Box>
-
-            <Box
-              display="flex"
-              flexDirection="column"
-              sx={{ textAlign: "right" }}
-            >
-              <Typography
-                variant="body1"
-                component="span"
-                sx={{ fontFamily, color: "black" }}
-              >
-                Langkah 2/2
-              </Typography>
-              <Typography
-                variant="body1"
-                component="span"
-                sx={{ fontFamily, color: "black" }}
-              >
-                Domisili
-              </Typography>
-            </Box>
-          </Box>
-
-          <Divider
-            sx={{
-              background: "linear-gradient(#000000, rgba(0,0,0,0))",
-              width: "100%",
-              position: "relative",
-              top: 70,
-              my: 2,
-            }}
-          />
-
-          <Box display="flex" width="100%">
+          <Box width="100%" sx={{ background: "white" }}>
             <Box
               width="50%"
               sx={{ display: { md: "block", xs: "none" } }}

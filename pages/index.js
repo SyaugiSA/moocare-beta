@@ -66,8 +66,8 @@ export default function Home() {
       setTime((time) => (time += 1));
     }, 1000);
     () => clearInterval(interval);
-    const username = prompt("Masukkan nama anda");
-    window.localStorage.setItem("username", username);
+    // const username = prompt("Masukkan nama anda");
+    // window.localStorage.setItem("username", username);
   }, []);
 
   return (
